@@ -5,11 +5,11 @@
     bin = []
     if (numero != 0) {
         while (controlador != 1) {  
-            bin.push((controlador % 2))
+            bin.unshift((controlador % 2))
             controlador = parseInt(controlador/2)
         }
-        bin.push(1)
-        binFinal = parseInt(bin.reverse().join('')) 
+        bin.unshift(1)
+        binFinal = parseInt(bin.join('')) 
     } else {
         binFinal =0
     }
