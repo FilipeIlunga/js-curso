@@ -109,6 +109,18 @@ function removeEven(lista) {
         }
     }
 }
+function removeOdd(lista) {
+    let current = lista.head;
+    while (current != null) {
+        if (current.value % 2 != 0) {
+            let pos = lista.indexOf(current.value)
+            lista.removeAt(pos)
+            current = current.next
+        } else {
+            current = current.next
+        }
+    }
+}
 
 let lista = new Lista()
 
@@ -116,5 +128,5 @@ for (let i = 0; i < 100;i+=3) {
     lista.push(i)
 }
 
-removeEven(lista)
+removeOdd(lista)
 console.log(JSON.stringify(lista, null, 2))
