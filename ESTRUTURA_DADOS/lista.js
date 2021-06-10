@@ -62,11 +62,27 @@ class Lista{
             return true
         }return false
     }
+    removeAt(position) {
+        if (position >= 0 && position <= this.count) {
+            const current = this.head
+            if (position === 0) {
+                this.head = current.next;
+            } else {
+                const previus = this.getElementAt(position - 1)
+                const current = previus.next
+                previus.next = current.next
+            }
+            this.count--;
+            return true
+        }
+        return false
+    }
+
 }
 
 const lista = new Lista()
 lista.push(15)
-console.log(JSON.stringify(lista, null, 2))
+//console.log(JSON.stringify(lista, null, 2))
 //OUTPUT
 /* {
     "head": {
@@ -75,7 +91,7 @@ console.log(JSON.stringify(lista, null, 2))
     "count": 1
 } */
 lista.push(40)
-console.log(JSON.stringify(lista, null, 2))
+//console.log(JSON.stringify(lista, null, 2))
 // OUTPUT
 /* {
     "head": {
@@ -87,7 +103,7 @@ console.log(JSON.stringify(lista, null, 2))
     "count": 2
 } */
 lista.push(10)
-console.log(JSON.stringify(lista, null, 2))
+//console.log(JSON.stringify(lista, null, 2))
 // OUTPUT
 /* {
     "head": {
@@ -100,4 +116,32 @@ console.log(JSON.stringify(lista, null, 2))
         }
     },
     "count": 3
+} */
+console.log(JSON.stringify(lista, null, 2))
+//OUTPUT
+/* 
+{
+  "head": {
+    "value": 15,
+    "next": {
+      "value": 40,
+      "next": {
+        "value": 10
+      }
+    }
+  },
+  "count": 3
+}
+*/
+lista.removeAt(2)
+console.log(JSON.stringify(lista, null, 2))
+//OUTPUT
+/* {
+  "head": {
+    "value": 15,
+    "next": {
+      "value": 40
+    }
+  },
+  "count": 2
 } */
