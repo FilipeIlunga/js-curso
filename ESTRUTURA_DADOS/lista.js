@@ -91,6 +91,9 @@ class Lista{
     isEmpty() {
         return this.count <1
     }
+    size() {
+        return this.count
+    }
 
 }
 
@@ -172,9 +175,20 @@ resultPosition = lista.indexOf(20)
 console.log(resultPosition)
 //OUTPUT = -1
 
-let emp = listaVazia.isEmpty()
-console.log(emp)
-//OUTPUT = true
- emp = lista.isEmpty()
-console.log(emp)
-//OUTPUT = false
+let i = listaVazia.isEmpty()
+console.log(`ListaVazia isEmpty: ${i}`)
+//OUTPUT = ListaVazia isEmpty: true
+i = lista.isEmpty()
+console.log(`Lista isEmpty: ${i}`)
+//OUTPUT = Lista isEmpty: false
+i = listaVazia.size()
+console.log(`ListaVazia size: ${i}`)
+//OUTPUT = Lista isEmpty: ListaVazia size: 0
+i = lista.size()
+console.log(`Lista size: ${i}`)
+//OUTPUT = Lista isEmpty: Lista size: 2
+
+
+
+
+
