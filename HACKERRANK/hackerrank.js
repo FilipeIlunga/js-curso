@@ -98,8 +98,3 @@ function main() {
     ws.end(); 
 }
 
-
-let teste = new SinglyLinkedList()
-teste.head = insertNodeAtTail(teste.head, 20)
-teste.head = insertNodeAtTail(teste.head, 50)
-console.log(teste)
