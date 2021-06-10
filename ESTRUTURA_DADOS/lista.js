@@ -145,3 +145,8 @@ console.log(JSON.stringify(lista, null, 2))
   },
   "count": 2
 } */
+
+
+const result = lista.removeAt(9)
+console.log(result)
+//OUTPUT - false - > undefined position
