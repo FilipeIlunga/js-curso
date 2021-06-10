@@ -121,6 +121,18 @@ function removeOdd(lista) {
         }
     }
 }
+function removeBigger(lista, num) {
+    let current = lista.head;
+    while (current != null) {
+        if (current.value > num) {
+            let pos = lista.indexOf(current.value)
+            lista.removeAt(pos)
+            current = current.next
+        } else {
+            current = current.next
+        }
+    }
+}
 
 let lista = new Lista()
 
@@ -128,5 +140,5 @@ for (let i = 0; i < 100;i+=3) {
     lista.push(i)
 }
 
-removeOdd(lista)
+removeBigger(lista,34)
 console.log(JSON.stringify(lista, null, 2))
