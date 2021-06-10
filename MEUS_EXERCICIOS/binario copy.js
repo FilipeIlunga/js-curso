@@ -29,7 +29,7 @@ function DecToBin_Reverse_BinToDec(numero){
 }
 
 
- DecToBin_Reverse_BinToDec(73)
+ DecToBin_Reverse_BinToDec(161)
 
 
 

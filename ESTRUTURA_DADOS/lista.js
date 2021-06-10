@@ -45,9 +45,59 @@ class Lista{
         }
         return undefined
     }
+    insertAt(element, position) {
+        if (position >= 0 && position <= this.count) {
+            const node = new Node(element)
+            if (position == 0) {
+                const current = this.head;
+                node.next = current;
+                this.head = node;
+            } else {
+                const previous = this.getElementAt(position - 1);
+                const current = previous.next;
+                node.next = current;
+                previous.next = node
+            }
+            this.count++;
+            return true
+        }return false
+    }
 }
 
 const lista = new Lista()
 lista.push(15)
+console.log(JSON.stringify(lista, null, 2))
+//OUTPUT
+/* {
+    "head": {
+        "value": 15
+    },
+    "count": 1
+} */
 lista.push(40)
-console.log(lista.getElementAt(0))
+console.log(JSON.stringify(lista, null, 2))
+// OUTPUT
+/* {
+    "head": {
+        "value": 15,
+            "next": {
+            "value": 40
+        }
+    },
+    "count": 2
+} */
+lista.push(10)
+console.log(JSON.stringify(lista, null, 2))
+// OUTPUT
+/* {
+    "head": {
+        "value": 15,
+            "next": {
+            "value": 40,
+                "next": {
+                "value": 10
+            }
+        }
+    },
+    "count": 3
+} */
