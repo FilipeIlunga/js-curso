@@ -88,10 +88,14 @@ class Lista{
         }
         return -1
     }
+    isEmpty() {
+        return this.count <1
+    }
 
 }
 
 const lista = new Lista()
+const listaVazia = new Lista()
 lista.push(15)
 //console.log(JSON.stringify(lista, null, 2))
 //OUTPUT
@@ -164,3 +168,13 @@ console.log(result)
 let resultPosition = lista.indexOf(40)
 console.log(resultPosition)
 // OUTPUT = 1
+resultPosition = lista.indexOf(20)
+console.log(resultPosition)
+//OUTPUT = -1
+
+let emp = listaVazia.isEmpty()
+console.log(emp)
+//OUTPUT = true
+ emp = lista.isEmpty()
+console.log(emp)
+//OUTPUT = false
