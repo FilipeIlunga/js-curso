@@ -77,6 +77,17 @@ class Lista{
         }
         return false
     }
+    indexOf(element) {
+        let current = this.head;
+        for (let i = 0; i < this.count && current != null; i++){
+            if (current.value == element) {
+                return i;
+            } else {
+                current = current.next
+            }
+        }
+        return -1
+    }
 
 }
 
@@ -150,3 +161,6 @@ console.log(JSON.stringify(lista, null, 2))
 const result = lista.removeAt(9)
 console.log(result)
 //OUTPUT - false - > undefined position
+let resultPosition = lista.indexOf(40)
+console.log(resultPosition)
+// OUTPUT = 1
